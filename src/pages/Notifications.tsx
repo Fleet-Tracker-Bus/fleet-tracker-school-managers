@@ -53,54 +53,54 @@ const Notifications = () => {
             id: 1,
             date: "2024-11-12",
             time: "14:30",
-            message: "Driver John Doe completed maintenance for Vehicle #123 on schedule.",
+            message: "Le conducteur John Doe a terminé la maintenance du véhicule #123 dans les délais.",
             type: "maintenance",
-            source: "Automatic",
+            source: "Automatique",
             priority: "low"
         },
         {
             id: 2,
             date: "2024-11-11",
             time: "08:15",
-            message: "Fuel refill for Vehicle #456 by Driver Jane Smith recorded.",
+            message: "Le ravitaillement en carburant du véhicule #456 par le conducteur Jane Smith a été enregistré.",
             type: "fuel management",
-            source: "Automatic",
+            source: "Automatique",
             priority: "medium"
         },
         {
             id: 3,
             date: "2024-11-10",
             time: "16:45",
-            message: "Driver Mark Lee reported bad behavior for Student #789 on route.",
+            message: "Le conducteur Mark Lee a signalé un mauvais comportement de l'élève #789 sur l'itinéraire.",
             type: "behavior",
-            source: "Driver",
+            source: "Conducteur",
             priority: "high"
         },
         {
             id: 4,
             date: "2024-11-09",
             time: "12:00",
-            message: "Vehicle #789 exceeded speed limit.",
+            message: "Le véhicule #789 a dépassé la limite de vitesse.",
             type: "speeding",
-            source: "Automatic",
+            source: "Automatique",
             priority: "critical"
         },
         {
             id: 5,
             date: "2024-11-08",
             time: "07:00",
-            message: "Driver Sam Carter marked as absent.",
+            message: "Le conducteur Sam Carter a été marqué comme absent.",
             type: "attendance",
-            source: "System",
+            source: "Système",
             priority: "high"
         },
         {
             id: 6,
             date: "2024-11-07",
             time: "18:20",
-            message: "Driver Laura Wilson completed route #102 successfully.",
+            message: "Le conducteur Laura Wilson a complété l'itinéraire #102 avec succès.",
             type: "route completion",
-            source: "Driver",
+            source: "Conducteur",
             priority: "low"
         }
     ];
@@ -200,7 +200,7 @@ const Notifications = () => {
                         text-black dark:text-white 
                         data-[state=active]:text-black dark:data-[state=active]:text-white"
                         >
-                            For you
+                            Pour vous
                         </TabsTrigger>
                         <TabsTrigger
                             value="send"
@@ -209,7 +209,7 @@ const Notifications = () => {
                         text-black dark:text-white 
                         data-[state=active]:text-black dark:data-[state=active]:text-white"
                         >
-                            Send
+                            Envoyer
                         </TabsTrigger>
                         <TabsTrigger
                             value="logs"
@@ -266,10 +266,10 @@ const Notifications = () => {
 
                     {/* Send Tab */}
                     <TabsContent value="send" className="text-gray-300 ">
-                        <h2 className="text-xl font-semibold mb-4 hidden">Send Notifications</h2>
+                        <h2 className="text-xl font-semibold mb-4 hidden">Envoyer des notifications</h2>
                         <form onSubmit={handleSendNotification} className="space-y-4">
                             <div>
-                                <Label className="text-black dark:text-white" htmlFor="type">Notification Type</Label>
+                                <Label className="text-black dark:text-white" htmlFor="type">Type de notification</Label>
                                 <Select onValueChange={handleTypeChange} required>
                                     <SelectTrigger className="bg-white dark:bg-[#2B2B2B] mt-2 w-full text-gray-500 dark:text-gray-300 placeholder:px-2 p-2 rounded-md border-gray-300">
                                         <SelectValue placeholder="Select notification type" />
@@ -284,7 +284,7 @@ const Notifications = () => {
                                 </Select>
                             </div>
                             <div>
-                                <Label className="text-black dark:text-white" htmlFor="message">Notification Message</Label>
+                                <Label className="text-black dark:text-white" htmlFor="message">Message de notification</Label>
                                 <Textarea
                                     id="message"
                                     placeholder="Enter your notification message here..."
@@ -295,15 +295,15 @@ const Notifications = () => {
                                 />
                             </div>
                             <div>
-                                <Label className="text-black dark:text-white" htmlFor="recipients">Recipients</Label>
+                                <Label className="text-black dark:text-white" htmlFor="recipients">Destinataires</Label>
                                 <Select onValueChange={setRecipientGroup} required>
                                     <SelectTrigger className="bg-white dark:bg-[#2B2B2B] w-full text-gray-500 dark:text-gray-300 placeholder:px-2 p-2 rounded-md border-gray-300 mt-2">
                                         <SelectValue placeholder="Select recipients" />
                                     </SelectTrigger>
                                     <SelectContent className="bg-[#3C3C3C] text-white">
-                                        <SelectItem value="drivers">All Drivers</SelectItem>
-                                        <SelectItem value="parents">All Parents</SelectItem>
-                                        <SelectItem value="both">Both Drivers and Parents</SelectItem>
+                                        <SelectItem value="drivers">Tous les chauffeurs</SelectItem>
+                                        <SelectItem value="parents">Tous les parents</SelectItem>
+                                        <SelectItem value="both">Les chauffeurs et les parents</SelectItem>
                                     </SelectContent>
                                 </Select>
                             </div>
@@ -314,13 +314,13 @@ const Notifications = () => {
                                 >
                                     <div className="thumb"></div>
                                 </div>
-                                <Label className="text-white" htmlFor="schedule">Schedule Notification</Label>
+                                <Label className="text-white" htmlFor="schedule">Planifier une notification</Label>
                             </div>
                             {isScheduled && (
                                 <div className="flex space-x-4 items-center">
 
                                     <div className="flex-1 flex flex-col w-full">
-                                        <Label className="mb-2 text-black dark:text-gray-400" htmlFor="time">Time</Label>
+                                        <Label className="mb-2 text-black dark:text-gray-400" htmlFor="time">Temps</Label>
                                         <Input
                                             id="time"
                                             type="time"
@@ -349,7 +349,7 @@ const Notifications = () => {
                         </form>
 
                         <div className="w-full mt-10 flex flex-col gap-2">
-                            <h2 className="font-semibold mb-4 text-black dark:text-gray-400">Scheduled Notifications</h2>
+                            <h2 className="font-semibold mb-4 text-black dark:text-gray-400">Notifications programmées</h2>
                             <div className="flex flex-col gap-4">
                                 {scheduledNotifications.map((notification) => (
                                     <div key={notification.id} className="flex md:max-w-xl w-full flex-col gap-2 bg-gray-200 dark:bg-[#4C4C4C] p-4 rounded-lg">
@@ -377,7 +377,7 @@ const Notifications = () => {
 
                     {/* Logs Tab */}
                     <TabsContent value="logs" className="text-gray-600 dark:text-gray-300">
-                        <h2 className="text-xl font-semibold mb-4">Notification between users</h2>
+                        <h2 className="text-xl font-semibold mb-4">Notification entre utilisateurs</h2>
                         <div>
                             {/* Filter Inputs */}
                             <div className="mb-4 flex gap-4">
@@ -393,7 +393,7 @@ const Notifications = () => {
                                     type="text"
                                     name="receiver"
                                     placeholder="Filter by receiver"
-                                    className="bg-gray-200 bg-[#3C3C3C] text-white p-2 rounded-md"
+                                    className="bg-gray-200 dark:bg-[#3C3C3C] text-white p-2 rounded-md"
                                     value={filters.receiver}
                                     onChange={handleFilterChange}
                                 />
@@ -414,8 +414,8 @@ const Notifications = () => {
                             <Table>
                                 <TableHeader>
                                     <TableRow>
-                                        <TableHead className="w-[200px]">Sender</TableHead>
-                                        <TableHead>Receiver</TableHead>
+                                        <TableHead className="w-[200px]">Expéditeur</TableHead>
+                                        <TableHead>Récepteur</TableHead>
                                         <TableHead>Type</TableHead>
                                         <TableHead>Date</TableHead>
                                         <TableHead className="text-right">Message</TableHead>
@@ -436,7 +436,7 @@ const Notifications = () => {
 
                             {/* No Data Message */}
                             {filteredData.length === 0 && (
-                                <p className="text-center text-gray-500 mt-4">No notifications found.</p>
+                                <p className="text-center text-gray-500 mt-4">Aucune notification trouvée.</p>
                             )}
                         </div>
 

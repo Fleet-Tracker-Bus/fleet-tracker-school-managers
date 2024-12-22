@@ -58,6 +58,7 @@ import { Bus, Users, Settings, School, MessageCircle, LayoutDashboard } from "lu
 import { Outlet } from 'react-router-dom'
 import { useLocation } from "react-router-dom"
 import { useState } from "react"
+import logo from '@/assets/vigilbuslogo.png'
 
 const data = {
     user: {
@@ -233,11 +234,19 @@ export default function Layout() {
             <Sidebar className="border-r border-gray-500 " collapsible="icon">
                 {
                     !isSidebarCollapsed && (
-                        <SidebarHeader className="bg-white dark:bg-[#2B2B2B] text-black dark:text-white p-6">
-                            <div className={`flex font-bold`}>
+                        <SidebarHeader className="bg-white dark:bg-[#2B2B2B] text-black dark:text-white py-4 px-2 overflow-hidden">
+                            {/* <div className={`flex font-bold`}>
                                 <h1 className="text-purple-500">Fleet</h1>
                                 <h1 className="ml-1">Tracker</h1>
                                 <h3 className="text-xs text-gray-400 mx-2">school</h3>
+                            </div> */}
+
+                            <div className="flex relative">
+                                <img src={'https://shobeewebsite.sirv.com/Images/vigilbus/logovb.png'} className="w-12" />
+                                <div className="flex absolute bottom-0 left-9 items-end uppercase texl-2xl w-full font-bold">
+                                    <h1 className="ml-1 text-[#eeb70a]">igil</h1>
+                                    <h1 className="ml-1">Bus</h1>
+                                </div>
                             </div>
                         </SidebarHeader>
                     )

@@ -14,52 +14,14 @@ import { sampleReportData } from './reportSampleData'
 type ReportType = 'students' | 'parents' | 'drivers' | 'vehicles' | 'fuel' | 'maintenance' | 'financial'
 
 const reportTypes: { value: ReportType; label: string }[] = [
-  { value: 'students', label: 'Students Report' },
-  { value: 'parents', label: 'Parents Report' },
-  { value: 'drivers', label: 'Drivers Report' },
-  { value: 'vehicles', label: 'Vehicles Report' },
-  { value: 'fuel', label: 'Fuel Consumption Report' },
-  { value: 'maintenance', label: 'Maintenance Report' },
-  { value: 'financial', label: 'Financial Report' },
+  { value: 'students', label: 'Rapport des élèves' },
+  { value: 'parents', label: 'Rapport des parents' },
+  { value: 'drivers', label: 'Rapport des conducteurs' },
+  { value: 'vehicles', label: 'Rapport des véhicules' },
+  { value: 'fuel', label: 'Rapport de consommation de carburant' },
+  { value: 'maintenance', label: 'Rapport de maintenance' },
+  { value: 'financial', label: 'Rapport financier' },
 ]
-
-// const mockReportData: Record<ReportType, ReportData[]> = {
-//   students: [
-//     { id: '1', date: '2023-05-01', value: 150, details: 'Total active students' },
-//     { id: '2', date: '2023-05-02', value: 148, details: '2 students inactive' },
-//     { id: '3', date: '2023-05-03', value: 152, details: '4 new students added' },
-//   ],
-//   parents: [
-//     { id: '1', date: '2023-05-01', value: 130, details: 'Total registered parents' },
-//     { id: '2', date: '2023-05-02', value: 132, details: '2 new parent registrations' },
-//     { id: '3', date: '2023-05-03', value: 131, details: '1 parent account deactivated' },
-//   ],
-//   drivers: [
-//     { id: '1', date: '2023-05-01', value: 20, details: 'Total active drivers' },
-//     { id: '2', date: '2023-05-02', value: 19, details: '1 driver on leave' },
-//     { id: '3', date: '2023-05-03', value: 21, details: '2 new drivers hired' },
-//   ],
-//   vehicles: [
-//     { id: '1', date: '2023-05-01', value: 15, details: 'Total operational vehicles' },
-//     { id: '2', date: '2023-05-02', value: 14, details: '1 vehicle under maintenance' },
-//     { id: '3', date: '2023-05-03', value: 16, details: '1 new vehicle added to fleet' },
-//   ],
-//   fuel: [
-//     { id: '1', date: '2023-05-01', value: 500, details: 'Total fuel consumption (liters)' },
-//     { id: '2', date: '2023-05-02', value: 480, details: 'Reduced consumption due to route optimization' },
-//     { id: '3', date: '2023-05-03', value: 510, details: 'Increased consumption due to longer routes' },
-//   ],
-//   maintenance: [
-//     { id: '1', date: '2023-05-01', value: 2, details: 'Vehicles under routine maintenance' },
-//     { id: '2', date: '2023-05-02', value: 1, details: 'Emergency repair for 1 vehicle' },
-//     { id: '3', date: '2023-05-03', value: 0, details: 'All vehicles operational' },
-//   ],
-//   financial: [
-//     { id: '1', date: '2023-05-01', value: 10000, details: 'Total revenue' },
-//     { id: '2', date: '2023-05-02', value: 8500, details: 'Operational costs' },
-//     { id: '3', date: '2023-05-03', value: 1500, details: 'Net profit' },
-//   ],
-// }
 
 const mockReportData = sampleReportData
 
@@ -103,7 +65,7 @@ export default function Reports() {
       <div className="flex flex-col md:flex-row gap-4">
         <Card className="flex-1 bg-gray-100 dark:bg-[#4C4C4C] border-hidden">
           <CardHeader>
-            <CardTitle>Select Report Type</CardTitle>
+            <CardTitle>Sélectionner le type de rapport</CardTitle>
           </CardHeader>
           <CardContent>
             <Select onValueChange={(value) => setSelectedReport(value as ReportType)} defaultValue={selectedReport}>
@@ -122,7 +84,7 @@ export default function Reports() {
         </Card>
         <Card className="flex-1 bg-gray-100 dark:bg-[#4C4C4C] border-hidden">
           <CardHeader>
-            <CardTitle>Select Date Range</CardTitle>
+            <CardTitle>Sélectionner la plage de dates</CardTitle>
           </CardHeader>
           <CardContent>
             <DatePickerWithRange dateRange={dateRange} setDateRange={setDateRange} />

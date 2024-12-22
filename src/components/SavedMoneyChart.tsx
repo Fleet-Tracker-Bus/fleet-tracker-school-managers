@@ -46,8 +46,8 @@ export function SavedMoneyChart() {
     <Card className="border-hidden">
       <CardHeader className="relative flex flex-row justify-between w-full items-center">
         <div className="gap-2 flex flex-col">
-          <CardTitle className="text-black dark:text-white">Total money saved</CardTitle>
-          <CardDescription className="text-gray-400">January - June 2024</CardDescription>
+          <CardTitle className="text-black dark:text-white">Argent total économisé</CardTitle>
+          <CardDescription className="text-gray-400">Janvier - Juin 2024</CardDescription>
         </div>
         <div className="hover:bg-gray-300/30 dark:hover:bg-gray-500/30 cursor-pointer p-2 rounded absolute top-2 right-2">
           <CalendarDays color={`${theme.theme === 'dark' ? 'white' : 'black'}`} />
@@ -70,7 +70,7 @@ export function SavedMoneyChart() {
               cursor={false}
               content={<ChartTooltipContent className={`${theme.theme === 'dark' ? "bg-white text-black" : "bg-black text-white"}`} hideLabel />}
             />
-            <Bar className="" dataKey="desktop" fill="#a855f7" radius={8} />
+            <Bar className="" dataKey="desktop" fill="#eeb70a" radius={8} />
           </BarChart>
         </ChartContainer>
       </CardContent>

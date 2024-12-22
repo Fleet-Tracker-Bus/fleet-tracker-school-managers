@@ -21,16 +21,18 @@ interface Message {
 }
 
 const contacts: Contact[] = [
-  { id: '1', name: 'Alice Smith', role: 'parent', avatar: '/placeholder.svg?height=40&width=40', lastMessage: 'Can you confirm the pickup time?' },
-  { id: '2', name: 'Bob Johnson', role: 'driver', avatar: '/placeholder.svg?height=40&width=40', lastMessage: 'Ill be there in 10 minutes.' },
-  { id: '3', name: 'Carol Williams', role: 'parent', avatar: '/placeholder.svg?height=40&width=40', lastMessage: 'Thank you for the update.' },
+  { id: '1', name: 'Omar Bouchama', role: 'parent', avatar: '/placeholder.svg?height=40&width=40', lastMessage: 'Can you confirm the pickup time?' },
+  { id: '2', name: 'Rami Bouchama', role: 'driver', avatar: '/placeholder.svg?height=40&width=40', lastMessage: 'Ill be there in 10 minutes.' },
+  { id: '3', name: 'Khalid Ben El Housine', role: 'parent', avatar: '/placeholder.svg?height=40&width=40', lastMessage: 'Thank you for the update.' },
 ]
+
 
 const initialMessages: Message[] = [
   { id: '1', senderId: '1', text: 'Hello, can you confirm the pickup time for today?', timestamp: '10:30 AM' },
   { id: '2', senderId: 'school', text: 'The pickup time is scheduled for 3:30 PM today.', timestamp: '10:32 AM' },
   { id: '3', senderId: '1', text: 'Great, thank you!', timestamp: '10:33 AM' },
 ]
+
 
 export const Messages = () => {
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null)
@@ -65,7 +67,7 @@ export const Messages = () => {
         {contacts.map(contact => (
           <div
             key={contact.id}
-            className="flex items-center p-4 hover:bg-gray-200 hover:bg-[#3A3A3A] cursor-pointer"
+            className="flex items-center p-4 hover:bg-gray-200 hover:bg-[#3A3A3A] dark:hover:bg-[#111] cursor-pointer"
             onClick={() => {
               setSelectedContact(contact)
               setShowContacts(false)

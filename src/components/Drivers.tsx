@@ -16,13 +16,14 @@ interface Driver {
 }
 
 const initialDrivers: Driver[] = [
-  { id: 1, firstName: 'John', lastName: 'Doe', email: 'john.doe@example.com', phone: '+1234567890' },
-  { id: 2, firstName: 'Jane', lastName: 'Smith', email: 'jane.smith@example.com', phone: '+1987654321' },
-  { id: 3, firstName: 'Bob', lastName: 'Johnson', email: 'bob.johnson@example.com', phone: '+1122334455' },
-  { id: 3, firstName: 'Bob', lastName: 'Johnson', email: 'bob.johnson@example.com', phone: '+1122334455' },
-  { id: 3, firstName: 'Bob', lastName: 'Johnson', email: 'bob.johnson@example.com', phone: '+1122334455' },
-  { id: 3, firstName: 'Bob', lastName: 'Johnson', email: 'bob.johnson@example.com', phone: '+1122334455' },
+  { id: 1, firstName: 'Mustapha', lastName: 'Dosari', email: 'mustapha.aldosari@example.com', phone: '+1234567890' },
+  { id: 2, firstName: 'Ahmed', lastName: 'Fahad', email: 'ahmed.alfahad@example.com', phone: '+1987654321' },
+  { id: 3, firstName: 'Ali', lastName: 'Hamdan', email: 'ali.alhamdan@example.com', phone: '+1122334455' },
+  { id: 4, firstName: 'Khalid', lastName: 'Mansoor', email: 'khalid.almansoor@example.com', phone: '+1122334455' },
+  { id: 5, firstName: 'Omar', lastName: 'Salem', email: 'omar.alsalem@example.com', phone: '+1122334455' },
+  { id: 6, firstName: 'Youssef', lastName: 'Rashid', email: 'youssef.alrashid@example.com', phone: '+1122334455' },
 ]
+
 
 export default function Drivers() {
   const [drivers, setDrivers] = useState<Driver[]>(initialDrivers)
@@ -91,10 +92,10 @@ export default function Drivers() {
   return (
     <div className="flex min-h-screen flex-col gap-10 text-black dark:text-white p-4">
       <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-        <h1 className="font-bold text-lg">{editingId !== null ? 'Edit driver' : 'Create driver'}</h1>
+        <h1 className="font-bold text-lg">{editingId !== null ? 'Modifier le conducteur' : 'Créer un conducteur'}</h1>
         <Input
           type="text"
-          placeholder="First name"
+          placeholder="Prénom"
           name="firstName"
           value={newDriver.firstName}
           onChange={handleInputChange}
@@ -102,7 +103,7 @@ export default function Drivers() {
         />
         <Input
           type="text"
-          placeholder="Last name"
+          placeholder="Nom de famille"
           name="lastName"
           value={newDriver.lastName}
           onChange={handleInputChange}
@@ -118,19 +119,20 @@ export default function Drivers() {
         />
         <Input
           type="tel"
-          placeholder="Phone number"
+          placeholder="Numéro de téléphone"
           name="phone"
           value={newDriver.phone}
           onChange={handleInputChange}
           required
         />
+
         <Button type="submit" className="w-full max-w-20 bg-black dark:bg-white text-white dark:text-black hover:bg-black/30 dark:hover:bg-white/50">
           {editingId !== null ? 'Update' : 'Create'}
         </Button>
       </form>
       <div className="flex flex-col gap-6">
         <div className="flex justify-between items-center">
-          <h1 className="font-bold text-lg">Your drivers</h1>
+          <h1 className="font-bold text-lg">Vos conducteurs</h1>
           <div className="flex gap-2">
             <Button
               onClick={() => document.getElementById('file-upload')?.click()}
@@ -147,7 +149,7 @@ export default function Drivers() {
               className="hidden"
             />
             <Button onClick={handleExport} className="bg-blue-500 hover:bg-blue-600">
-            <Upload className="h-4 w-4 mr-2" />
+              <Upload className="h-4 w-4 mr-2" />
               Export Excel
             </Button>
           </div>
@@ -156,11 +158,12 @@ export default function Drivers() {
           <Table>
             <TableHeader>
               <TableRow className="border-gray-700">
-                <TableHead className="text-black dark:text-gray-300">First Name</TableHead>
-                <TableHead className="text-black dark:text-gray-300">Last Name</TableHead>
-                <TableHead className="text-black dark:text-gray-300">Email</TableHead>
-                <TableHead className="text-black dark:text-gray-300">Phone</TableHead>
-                <TableHead className="text-black dark:text-gray-300">Actions</TableHead>
+              <TableHead className="text-black dark:text-gray-300">Prénom</TableHead>
+<TableHead className="text-black dark:text-gray-300">Nom de famille</TableHead>
+<TableHead className="text-black dark:text-gray-300">Email</TableHead>
+<TableHead className="text-black dark:text-gray-300">Téléphone</TableHead>
+<TableHead className="text-black dark:text-gray-300">Actions</TableHead>
+
               </TableRow>
             </TableHeader>
             <TableBody>

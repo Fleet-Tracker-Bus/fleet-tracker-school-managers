@@ -23,10 +23,11 @@ interface Parent {
 }
 
 const initialParents: Parent[] = [
-  { id: 1, firstName: 'John', lastName: 'Doe', email: 'john.doe@example.com', phone: '+1234567890', kids: [{ id: 1, name: 'Alice Doe' }, { id: 2, name: 'Bob Doe' }] },
-  { id: 2, firstName: 'Jane', lastName: 'Smith', email: 'jane.smith@example.com', phone: '+1987654321', kids: [{ id: 3, name: 'Charlie Smith' }] },
-  { id: 3, firstName: 'Mike', lastName: 'Johnson', email: 'mike.johnson@example.com', phone: '+1122334455', kids: [{ id: 4, name: 'David Johnson' }, { id: 5, name: 'Eva Johnson' }] },
+  { id: 1, firstName: 'El Aarbi', lastName: 'Bouchama', email: 'aarbi@example.com', phone: '+1234567890', kids: [{ id: 1, name: 'Omar Bouchama' }, { id: 2, name: 'Rami Bouchama' }] },
+  { id: 2, firstName: 'Naji', lastName: 'Ben El Housine', email: 'naji.smith@example.com', phone: '+1987654321', kids: [{ id: 3, name: 'Khalid Ben El Housine' }] },
+  { id: 3, firstName: 'Hassan', lastName: 'Lksir', email: 'lksir.hassan@example.com', phone: '+1122334455', kids: [{ id: 4, name: 'Tariq Lksir' }, { id: 5, name: 'Ali Lksir' }] },
 ]
+
 
 export default function Parents() {
   const [parents, setParents] = useState<Parent[]>(initialParents)
@@ -100,10 +101,10 @@ export default function Parents() {
   return (
     <div className="min-h-screen flex flex-col gap-10 text-black dark:text-white p-4">
       <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-        <h1 className="font-bold text-lg">{editingId !== null ? 'Edit parent' : 'Add new parent'}</h1>
+        <h1 className="font-bold text-lg">{editingId !== null ? 'Modifier le parent' : 'Ajouter un nouveau parent'}</h1>
         <Input
           type="text"
-          placeholder="First name"
+          placeholder="Prénom"
           name="firstName"
           value={newParent.firstName}
           onChange={handleInputChange}
@@ -111,7 +112,7 @@ export default function Parents() {
         />
         <Input
           type="text"
-          placeholder="Last name"
+          placeholder="Nom de famille"
           name="lastName"
           value={newParent.lastName}
           onChange={handleInputChange}
@@ -127,20 +128,21 @@ export default function Parents() {
         />
         <Input
           type="tel"
-          placeholder="Phone number"
+          placeholder="Numéro de téléphone"
           name="phone"
           value={newParent.phone}
           onChange={handleInputChange}
           required
         />
-        
+
+
         <Button type="submit" className="w-full max-w-20 bg-black dark:bg-white text-white dark:text-black hover:bg-black/30 dark:hover:bg-white/50">
           {editingId !== null ? 'Update' : 'Add'}
         </Button>
       </form>
       <div className="flex flex-col gap-6">
         <div className="flex justify-between items-center">
-          <h1 className="font-bold text-lg">Parent List</h1>
+          <h1 className="font-bold text-lg">Liste des parents</h1>
           <div className="flex gap-2">
             <Button
               onClick={() => document.getElementById('file-upload')?.click()}
@@ -166,12 +168,13 @@ export default function Parents() {
           <Table>
             <TableHeader>
               <TableRow className="border-gray-700">
-                <TableHead className="text-black dark:text-gray-300">First Name</TableHead>
-                <TableHead className="text-black dark:text-gray-300">Last Name</TableHead>
+                <TableHead className="text-black dark:text-gray-300">Prénom</TableHead>
+                <TableHead className="text-black dark:text-gray-300">Nom de famille</TableHead>
                 <TableHead className="text-black dark:text-gray-300">Email</TableHead>
-                <TableHead className="text-black dark:text-gray-300">Phone</TableHead>
-                <TableHead className="text-black dark:text-gray-300">Kids</TableHead>
+                <TableHead className="text-black dark:text-gray-300">Téléphone</TableHead>
+                <TableHead className="text-black dark:text-gray-300">Enfants</TableHead>
                 <TableHead className="text-black dark:text-gray-300">Actions</TableHead>
+
               </TableRow>
             </TableHeader>
             <TableBody>

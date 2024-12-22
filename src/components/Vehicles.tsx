@@ -14,11 +14,11 @@ interface Vehicle {
 }
 
 const initialVehicles: Vehicle[] = [
-  { id: 1, number: 'V001', driver: 'John Doe', route: 'Route A' },
-  { id: 2, number: 'V002', driver: 'Jane Smith', route: 'Route B' },
-  { id: 3, number: 'V003', driver: 'Bob Johnson', route: 'Route C' },
-  { id: 4, number: 'V004', driver: 'Alice Brown', route: 'Route D' },
-  { id: 5, number: 'V005', driver: 'Charlie Davis', route: 'Route E' },
+  { id: 1, number: 'V001', driver: 'Khalid qasimi', route: 'Route A' },
+  { id: 2, number: 'V002', driver: 'Yassine bidan', route: 'Route B' },
+  { id: 3, number: 'V003', driver: 'Mohammed basim', route: 'Route C' },
+  { id: 4, number: 'V004', driver: 'Jamal yahya', route: 'Route D' },
+  { id: 5, number: 'V005', driver: 'Akram lmjdoubi', route: 'Route E' },
 ]
 
 export default function Vehicles() {
@@ -55,10 +55,10 @@ export default function Vehicles() {
   return (
     <div className="flex flex-col gap-10 text-black dark:text-white p-4">
       <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-        <h1 className="font-bold text-lg">{editingId !== null ? 'Edit vehicle' : 'Create vehicle'}</h1>
+        <h1 className="font-bold text-lg">{editingId !== null ? 'Modifier le véhicule' : 'Créer un véhicule'}</h1>
         <Input
           type="text"
-          placeholder="Vehicle number"
+          placeholder="Numéro du véhicule"
           name="number"
           value={newVehicle.number}
           onChange={handleInputChange}
@@ -66,7 +66,7 @@ export default function Vehicles() {
         />
         <Input
           type="text"
-          placeholder="Assign driver"
+          placeholder="Attribuer un conducteur"
           name="driver"
           value={newVehicle.driver}
           onChange={handleInputChange}
@@ -74,7 +74,7 @@ export default function Vehicles() {
         />
         <Input
           type="text"
-          placeholder="Assign route"
+          placeholder="Attribuer un itinéraire"
           name="route"
           value={newVehicle.route}
           onChange={handleInputChange}
@@ -85,14 +85,14 @@ export default function Vehicles() {
         </Button>
       </form>
       <div className="flex flex-col gap-6">
-        <h1 className="font-bold text-lg">Your vehicles</h1>
+        <h1 className="font-bold text-lg">Vos véhicules</h1>
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
               <TableRow className="border-gray-700">
-                <TableHead className="text-black dark:text-gray-300">Number</TableHead>
-                <TableHead className="text-black dark:text-gray-300">Driver</TableHead>
-                <TableHead className="text-black dark:text-gray-300">Route</TableHead>
+                <TableHead className="text-black dark:text-gray-300">Numéro</TableHead>
+                <TableHead className="text-black dark:text-gray-300">Conducteur</TableHead>
+                <TableHead className="text-black dark:text-gray-300">Itinéraire</TableHead>
                 <TableHead className="text-black dark:text-gray-300">Actions</TableHead>
               </TableRow>
             </TableHeader>

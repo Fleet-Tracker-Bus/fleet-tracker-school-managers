@@ -35,12 +35,12 @@ const initialRoutes: Route[] = [
     name: "Ahlen - riyad tetouan",
     startLocation: { lat: 40.7128, lng: -74.0060 },
     endLocation: { lat: 40.7580, lng: -73.9855 },
-    startLocationName: "New York City",
-    endLocationName: "Manhattan",
+    startLocationName: "Ahlen, tanger",
+    endLocationName: "riyad tetouan, tanger",
     assignedVehicle: { id: 1, number: "V001" },
     assignedStudents: [
-      { id: 1, name: "Alice Johnson" },
-      { id: 2, name: "Bob Smith" },
+      { id: 1, name: "Yassir bekkar" },
+      { id: 2, name: "Rayan el mousawi" },
     ]
   },
   {
@@ -48,12 +48,12 @@ const initialRoutes: Route[] = [
     name: "Ibiria - riyad titoun",
     startLocation: { lat: 40.7128, lng: -74.0060 },
     endLocation: { lat: 40.7580, lng: -73.9855 },
-    startLocationName: "New York City",
-    endLocationName: "Manhattan",
+    startLocationName: "Ibiria, tanger",
+    endLocationName: "riyad titoun, tanger",
     assignedVehicle: { id: 1, number: "V002" },
     assignedStudents: [
-      { id: 1, name: "Alice Johnson" },
-      { id: 2, name: "Bob Smith" },
+      { id: 1, name: "Houda fikri" },
+      { id: 2, name: "Yassine Hmamouch" },
     ]
   },
 ]
@@ -179,7 +179,7 @@ export default function RoutesManagement() {
 
   return (
     <div className="flex min-h-screen flex-col gap-10 text-black dark:text-white p-4">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+      {/* <form onSubmit={handleSubmit} className="flex flex-col gap-6">
         <h1 className="font-bold text-lg">{editingId !== null ? 'Edit route' : 'Create new route'}</h1>
         <Input
           type="text"
@@ -294,20 +294,21 @@ export default function RoutesManagement() {
         <Button type="submit" className="w-full max-w-20 bg-white text-black hover:bg-white/50">
           {editingId !== null ? 'Update' : 'Create'}
         </Button>
-      </form>
+      </form> */}
 
       <div className="flex flex-col gap-6">
-        <h1 className="font-bold text-lg">Route List</h1>
+        <h1 className="font-bold text-lg">Liste des itinéraires (générée par l'IA)</h1>
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
               <TableRow className="border-gray-700">
-                <TableHead className="text-black dark:text-gray-300">Name</TableHead>
-                <TableHead className="text-black dark:text-gray-300">Start Location</TableHead>
-                <TableHead className="text-black dark:text-gray-300">End Location</TableHead>
-                <TableHead className="text-black dark:text-gray-300">Assigned Vehicle</TableHead>
-                <TableHead className="text-black dark:text-gray-300">Assigned Students</TableHead>
+                <TableHead className="text-black dark:text-gray-300">Nom</TableHead>
+                <TableHead className="text-black dark:text-gray-300">Lieu de départ</TableHead>
+                <TableHead className="text-black dark:text-gray-300">Lieu d'arrivée</TableHead>
+                <TableHead className="text-black dark:text-gray-300">Véhicule attribué</TableHead>
+                <TableHead className="text-black dark:text-gray-300">Étudiants attribués</TableHead>
                 <TableHead className="text-black dark:text-gray-300">Actions</TableHead>
+
               </TableRow>
             </TableHeader>
             <TableBody>
