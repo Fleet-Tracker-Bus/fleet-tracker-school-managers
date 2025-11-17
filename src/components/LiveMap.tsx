@@ -194,6 +194,8 @@ const LiveMapBox: React.FC<LiveMapProps> = ({ center, zoom }) => {
             type: 'LineString',
             coordinates: route,
           },
+        properties: {} // ✅ required
+
         },
       });
 
